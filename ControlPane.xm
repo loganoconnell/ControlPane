@@ -527,11 +527,21 @@
 
 %new
 - (void)updateNowPlayingInfo:(NSNotification *)notification {
-    MRMediaRemoteGetNowPlayingInfo(dispatch_get_main_queue(), ^(CFDictionaryRef result) {
-		NSDictionary *info = (NSDictionary *)result;
-       	albumArtworkImage.image = [UIImage imageWithData:[info objectForKey:@"kMRMediaRemoteNowPlayingInfoArtworkData"]];
-		songTitleLabel.text = [info objectForKey:@"kMRMediaRemoteNowPlayingInfoTitle"];
-		artistNameLabel.text = [info objectForKey:@"kMRMediaRemoteNowPlayingInfoArtist"];
+	MRMediaRemoteGetNowPlayingApplicationIsPlaying(dispatch_get_main_queue(), ^(Boolean isPlaying) {
+		if ((BOOL)isPlaying) {
+			MRMediaRemoteGetNowPlayingInfo(dispatch_get_main_queue(), ^(CFDictionaryRef result) {
+				NSDictionary *info = (NSDictionary *)result;
+       			albumArtworkImage.image = [UIImage imageWithData:[info objectForKey:@"kMRMediaRemoteNowPlayingInfoArtworkData"]];
+				songTitleLabel.text = [info objectForKey:@"kMRMediaRemoteNowPlayingInfoTitle"];
+				artistNameLabel.text = [info objectForKey:@"kMRMediaRemoteNowPlayingInfoArtist"];
+    		});
+		}
+
+		else { 
+			albumArtworkImage.image = [[UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/ControlPanePrefs.bundle/albumart.png"] _flatImageWithColor:[UIColor whiteColor]];
+			songTitleLabel.text = @"Song Title";
+			artistNameLabel.text = @"Artist Name";
+		}
     });
 }
 
