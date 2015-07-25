@@ -1,0 +1,9 @@
+Package: com.TweaksByLogan.ControlPane
+Name: ControlPane
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: All your settings, in one place.
+Maintainer: Logan O'Connell
+Author: Logan O'Connell
+Section: Tweaks

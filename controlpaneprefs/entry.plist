@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = ControlPanePrefs;
+	cell = PSLinkCell;
+	detail = ControlPanePrefsListController;
+	icon = ControlPanePrefs.png;
+	isController = 1;
+	label = ControlPane;
+    };
+}

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerCellClass</key>	<string>ControlPaneCustomCell</string>
+		</dict>
+
+        <dict>
+            <key>cell</key>             <string>PSGroupCell</string>
+        </dict>
+
+        <dict>
+            <key>cell</key>             <string>PSSwitchCell</string>
+            <key>default</key>          <true/>
+            <key>defaults</key>         <string>com.tweaksbylogan.controlpane</string>
+            <key>key</key>              <string>enabled</string>
+            <key>label</key>            <string>Enabled</string>
+            <key>PostNotification</key> <string>com.tweaksbylogan.controlpane/saved</string>
+        </dict>
+
+		<dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>				<string>PSLinkCell</string>
+			<key>label</key>			<string>Activation Methods</string>
+			<key>isController</key>		<true/>
+			<key>bundle</key>			<string>LibActivator</string>
+			<key>activatorListener</key><string>com.TweaksByLogan.ControlPane</string>
+		</dict>
+
+		<dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>label</key>			<string>Settings</string>
+			<key>footerText</key>		<string>Choose a blur type for the background.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+		<dict>
+			<key>cell</key>				<string>PSSegmentCell</string>
+			<key>defaults</key>			<string>com.tweaksbylogan.controlpane</string>
+			<key>key</key>				<string>blurType</string>
+			<key>default</key>			<string>light</string>
+			<key>validTitles</key>		<array>
+											<string>Extra Light</string>
+											<string>Light</string>
+											<string>Dark</string>
+										</array>
+			<key>validValues</key>
+										<array>
+											<string>extralight</string>
+											<string>light</string>
+											<string>dark</string>
+										</array>
+			<key>PostNotification</key>	<string>com.tweaksbylogan.controlpane/saved</string>
+		</dict>
+
+		<dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerText</key>		<string>Bring the ControlPane in from the left.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+		<dict>
+            <key>cell</key>             <string>PSSwitchCell</string>
+            <key>default</key>          <false/>
+            <key>defaults</key>         <string>com.tweaksbylogan.controlpane</string>
+            <key>key</key>              <string>leftyMode</string>
+            <key>label</key>            <string>Lefty Mode</string>
+            <key>PostNotification</key> <string>com.tweaksbylogan.controlpane/saved</string>
+        </dict>
+
+        <dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerText</key>		<string>Show white separators in the ControlPane.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+		<dict>
+            <key>cell</key>             <string>PSSwitchCell</string>
+            <key>default</key>          <true/>
+            <key>defaults</key>         <string>com.tweaksbylogan.controlpane</string>
+            <key>key</key>              <string>showSeparators</string>
+            <key>label</key>            <string>Show Separators</string>
+            <key>PostNotification</key> <string>com.tweaksbylogan.controlpane/saved</string>
+        </dict>
+
+        <dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerText</key>		<string>Show an alert before certain actions.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+        <dict>
+            <key>cell</key>             <string>PSSwitchCell</string>
+            <key>default</key>          <true/>
+            <key>defaults</key>         <string>com.tweaksbylogan.controlpane</string>
+            <key>key</key>              <string>shouldConfirm</string>
+            <key>label</key>            <string>Use Confirmation Alert</string>
+            <key>PostNotification</key> <string>com.tweaksbylogan.controlpane/saved</string>
+        </dict>
+
+        <dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerText</key>		<string>The ControlPane will be shown instead.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+		<dict>
+            <key>cell</key>             <string>PSSwitchCell</string>
+            <key>default</key>          <true/>
+            <key>defaults</key>         <string>com.tweaksbylogan.controlpane</string>
+            <key>key</key>              <string>replacePowerDownScreen</string>
+            <key>label</key>            <string>Replace Power Down Screen</string>
+            <key>PostNotification</key> <string>com.tweaksbylogan.controlpane/saved</string>
+        </dict>
+
+        <dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerText</key>		<string>Change the animation duration of the view.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+        <dict>
+			<key>cell</key>				<string>PSSliderCell</string>
+			<key>default</key>          <real>0.25</real>
+			<key>defaults</key>			<string>com.tweaksbylogan.controlpane</string>
+			<key>key</key>				<string>animationDuration</string>
+			<key>max</key>				<integer>1</integer>
+			<key>min</key>				<integer>0</integer>
+			<key>showValue</key>		<true/>
+			<key>PostNotification</key>	<string>com.tweaksbylogan.controlpane/saved</string>
+		</dict>
+
+		<dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerText</key>		<string>Change the alpha of the dimming view.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+		<dict>
+			<key>cell</key>				<string>PSSliderCell</string>
+			<key>default</key>          <real>0.2</real>
+			<key>defaults</key>			<string>com.tweaksbylogan.controlpane</string>
+			<key>key</key>				<string>dimViewAlpha</string>
+			<key>max</key>				<integer>1</integer>
+			<key>min</key>				<integer>0</integer>
+			<key>showValue</key>		<true/>
+			<key>PostNotification</key>	<string>com.tweaksbylogan.controlpane/saved</string>
+		</dict>
+
+		<dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+	    	<key>footerText</key>		<string>Change the corner radius of the ControlPane.</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+
+		<dict>
+			<key>cell</key>				<string>PSSliderCell</string>
+			<key>default</key>          <real>0</real>
+			<key>defaults</key>			<string>com.tweaksbylogan.controlpane</string>
+			<key>key</key>				<string>cornerRadius</string>
+			<key>max</key>				<integer>50</integer>
+			<key>min</key>				<integer>0</integer>
+			<key>showValue</key>		<true/>
+			<key>PostNotification</key>	<string>com.tweaksbylogan.controlpane/saved</string>
+		</dict>
+
+		<dict>
+	    	<key>cell</key>				<string>PSGroupCell</string>
+		</dict>
+
+		<dict>
+	    	<key>action</key>			<string>respring</string>
+            <key>cell</key>             <string>PSButtonCell</string>
+	    	<key>defaults</key>         <string>com.tweaksbylogan.controlpane</string>
+	    	<key>label</key>            <string>Respring</string>
+        </dict>
+
+		<dict>
+	    	<key>action</key>			<string>followLogan</string>
+            <key>cell</key>             <string>PSButtonCell</string>
+	    	<key>defaults</key>         <string>com.tweaksbylogan.controlpane</string>
+	    	<key>label</key>            <string>Follow @logandev22 on Twitter</string>
+        </dict>
+
+        <dict>
+        	<key>cell</key>				<string>PSGroupCell</string>
+			<key>footerText</key>		<string>© 2015 Logan O'Connell</string>
+			<key>footerAlignment</key>	<integer>1</integer>
+		</dict>
+	</array>
+	<key>title</key>		<string></string>
+</dict>
+</plist>
