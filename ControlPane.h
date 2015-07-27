@@ -36,12 +36,6 @@
 - (id)applicationWithPid:(int)pid;
 @end
 
-@interface MPUNowPlayingController : NSObject
-+ (id)sharedInstance;
-- (double)currentElapsed;
-- (double)currentDuration;
-@end
-
 @interface SBPowerDownController : NSObject
 - (void)activate;
 - (void)cancel;
@@ -95,10 +89,6 @@ UIButton *playPauseButton;
 UIButton *fastForwardButton;
 
 UIAlertView *alertView;
-
-NSTimer *updateTrackProgressTimer;
-
-id nowPlayingController;
 
 NSBundle *templateBundle = [NSBundle bundleWithPath:@"/Library/PreferenceBundles/ControlPanePrefs.bundle/IconTemplate.bundle"];
 

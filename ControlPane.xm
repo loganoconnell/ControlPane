@@ -210,14 +210,6 @@
 	artistNameLabel.scrollDirection = CBAutoScrollDirectionLeft;
 	[effectView.contentView addSubview:artistNameLabel];
 
-	trackProgressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-	trackProgressView.frame = CGRectMake(20, (screenHeightScale * 8) - 0.5, (screenHeightScale * 3) - 40, 1);
-	trackProgressView.progress = 0.0;
-	trackProgressView.trackTintColor = [UIColor blackColor];
-	trackProgressView.progressTintColor = [UIColor whiteColor];
-	trackProgressView.alpha = 0.0;
-	[effectView.contentView addSubview:trackProgressView];
-
 	rewindButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	rewindButton.frame = CGRectMake((screenHeightScale / 2) - 18.75, ((screenHeightScale / 2) - 18.75) + (screenHeightScale * 8), 37.5, 37.5);
 	rewindButton.backgroundColor = [UIColor clearColor];
@@ -259,8 +251,6 @@
 	}
 
 	alertView = [[UIAlertView alloc] initWithTitle:@"Power Off?" message:@"" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-
-	updateTrackProgressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTrackProgress:) userInfo:nil repeats:YES];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateVolumeLevel:) name:@"SBMediaVolumeChangedNotification" object:[%c(SBMediaController) sharedInstance]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBrightnessLevel:) name:@"UIScreenBrightnessDidChangeNotification" object:nil];
@@ -511,11 +501,6 @@
 }
 
 %new
-- (void)updateTrackProgress:(id)sender {
-	[trackProgressView setProgress:[[%c(MPUNowPlayingController) sharedInstance] currentElapsed] / [[%c(MPUNowPlayingController) sharedInstance] currentDuration] animated:YES];
-}
-
-%new
 - (void)updateVolumeLevel:(NSNotification *)notification {
 	volumeSlider.value = [[%c(SBMediaController) sharedInstance] volume];
 }
@@ -556,18 +541,6 @@
 			[playPauseButton setImage:[[UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/ControlPanePrefs.bundle/play.png"] _flatImageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
 		}
     });
-}
-%end
-
-%hook MPUNowPlayingController
-- (id)init {
-	nowPlayingController = self;
-	return %orig;
-}
-
-%new
-+ (id)sharedInstance {
-	return nowPlayingController;
 }
 %end
 

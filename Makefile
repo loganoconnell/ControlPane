@@ -1,5 +1,6 @@
 ARCHS = armv7 arm64
 THEOS_BUILD_DIR = Packages
+THEOS_DEVICE_IP = 192.168.1.23
 include theos/makefiles/common.mk
 
 TWEAK_NAME = ControlPane

@@ -1,6 +1,6 @@
 Package: com.TweaksByLogan.ControlPane
 Name: ControlPane
-Depends: mobilesubstrate
+Depends: mobilesubstrate, com.a3tweaks.flipswitch, libactivator
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: All your settings, in one place.
